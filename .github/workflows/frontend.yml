@@ -1,4 +1,4 @@
-name: Art Admin CI
+name: Frontend CI
 
 on:
   push:
