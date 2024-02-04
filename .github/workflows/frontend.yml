@@ -1,0 +1,29 @@
+name: Art Admin CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: build
+        run: |
+          cd frontend
+          npm install && npm run build
+      - name: deploy
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          SOURCE: frontend/dist/*
+          REMOTE_HOST: '39.101.136.131'
+          REMOTE_USER: root
+          TARGET: /www/wwwroot/www.istj-enfp.love
