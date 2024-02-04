@@ -101,7 +101,7 @@ const calendar_heatmap_option = ref({
 </script>
 
 <template>
-  <v-chart :option="calendar_heatmap_option" style="height: 1000px; width: 1000px; margin-bottom: 100px;" />
+  <v-chart :option="calendar_heatmap_option" style="height: 500px; width: 1000px; margin-bottom: 100px;" />
 </template>
 
 <style scoped></style>

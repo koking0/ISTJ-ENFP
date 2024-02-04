@@ -1,5 +1,9 @@
 <script setup>
-import HelloWorld from './views/HelloWorld.vue'
+import HelloWorld from './views/HelloWorld.vue';
+
+import * as echarts from "echarts"
+import { provide } from "vue"
+provide("echarts", echarts)
 </script>
 
 <template>

@@ -4,6 +4,7 @@ import MsgTypeCntChart from '../components/MsgTypeCntChart.vue';
 import MonthMsgCntChart from '../components/MonthMsgCntChart.vue';
 import MaxLengthMsgImg from '../components/MaxLengthMsgImg.vue';
 import CalendarHeatmapChart from '../components/CalendarHeatmapChart.vue';
+import WordCloudChart from '../components/WordCloudChart.vue';
 
 defineProps({
   msg: String,
@@ -44,6 +45,7 @@ onUnmounted(() => {
   <MsgTypeCntChart />
   <MonthMsgCntChart />
   <MaxLengthMsgImg />
+  <WordCloudChart />
   <CalendarHeatmapChart />
 </template>
 
