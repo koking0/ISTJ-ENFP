@@ -3,6 +3,8 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import MsgTypeCntChart from '../components/MsgTypeCntChart.vue';
 import MonthMsgCntChart from '../components/MonthMsgCntChart.vue';
 import MaxLengthMsgImg from '../components/MaxLengthMsgImg.vue';
+import HourMsgCntChart from '../components/HourMsgCntChart.vue';
+import DayMsgSentimentChart from '../components/DayMsgSentimentChart.vue';
 import CalendarHeatmapChart from '../components/CalendarHeatmapChart.vue';
 import WordCloudChart from '../components/WordCloudChart.vue';
 
@@ -10,7 +12,7 @@ defineProps({
   msg: String,
 });
 
-const startTime = new Date('2022-07-03 13:00:35').getTime();
+const startTime = new Date('2022-04-16 12:56:28').getTime();
 const timeDiff = ref('');
 
 const updateTimeDiff = () => {
@@ -39,12 +41,14 @@ onUnmounted(() => {
 <template>
   <h1>{{ msg }}</h1>
   
-  <div style="margin-top: 50px;">我们第一次聊天在 <br /> 2022-07-03 13:00:35</div>
+  <div style="margin-top: 50px;">我们第一次聊天在 <br /> 2022-04-16 12:56:28</div>
   <div style="margin-bottom: 50px;">距今已有 <br /> {{ timeDiff }}</div>
 
   <MsgTypeCntChart />
   <MonthMsgCntChart />
   <MaxLengthMsgImg />
+  <HourMsgCntChart />
+  <DayMsgSentimentChart />
   <WordCloudChart />
   <CalendarHeatmapChart />
 </template>
